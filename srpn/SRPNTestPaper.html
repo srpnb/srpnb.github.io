@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <title>星球阁试卷生成器</title>
+        <link rel="Shortcut Icon" href="https://user-assets.sxlcdn.com/images/703562/Fu2HV9A-vqwVbKoCjNPG1CmqWe9j.jpg?imageMogr2/strip/auto-orient/thumbnail/64x64>/interlace/1/format/jpg" />
+        <style>
+            body {
+                background-color: #ccf;
+                color: #464849;
+                font-family: sans-serif, arial;
+                overflow-x: hidden;
+            }
+            input {
+                width: 7em;
+            }
+            noscript {
+                font-size: 2em;
+                display: block;
+                color: red;
+                text-align: center;
+            }
+            h1 {
+                display: inline;
+            }
+            #result {
+                font-size: 0.8em;
+            }
+            .warning {
+                color: red;
+            }
+            .version {
+                text-decoration: none;
+                color: #464849;
+            }
+            .lzs {
+                /* .lzs 和 下面的动画 以及 class='lzs'的元素和css样式可以删掉 */
+                animation: lzs 20s;
+                position: absolute;
+                top: 0;
+                left: 2em;
+                font-size: 0.5em;
+            }
+            @keyframes lzs {
+                0% {
+                    left: -20em;
+                }
+                100% {
+                    left: 2em;
+                }
+            }
+        </style>
+        <script>
+            function generate(numberOfTests) {
+                console.clear();
+                tk = [
+                    ["如果有人争执，该怎么办？（2分）", "如果有人发布假消息，该怎么办？（3分）", "如果有人对你进行侮辱，该怎么办（3分）", "如果有人无脑反某某东西，该怎么做？（3分）", "如果有人盗视频，该怎么办？（4分）", "当遇到柠檬精时，该怎么做（羡慕你所以瞧不起你的人）（4分）", "请问你擅长什么（3分）", "以前你是否发过此类视频？如果发过，请问除了这方面还拍过哪一些方面的？", "如果别人模仿不@原创怎么办（3分）", "如果有人莫名其妙的把你给举报了，你会做什么？（4分）", "判断题：星球家族（星球阁前身）创建已经有一年（2分）", "星球家族（星球阁前身）的族长是谁（1分）", "如果阁内出现成员歧视事件，你要怎么做（4分）", "如果阁内有一位不理智成员，你要怎么做（4分）", "如果有成员退出星球阁以后恶意造谣以此侮辱星球阁该怎么办？（4分）", "请问柯伊伯带在什么行星之后？（2分）", "请问在地球发一束光到月球并返回需要多久？（单位：秒）（请写出过程）（2分）", "太阳系位于银河系的哪一条悬臂上？（2分）", "如果阁内有人刷屏骚扰别人，你会怎么做？（3分）", "如果你见到你喜爱的圈子有个圈外人因为不懂而乱评论，你会？（2分）", "如果有人在网上暴露他人信息，你会？（2分）", "阁内成员出现散播负能量，诱导成员散播负能量信息等行为，我们应该怎么办（3分）", "如果有人催你更新，你会？（3分）", "请问你是如何看待抑郁症、焦虑症等心理疾病的？"],
+                    ["太阳系有多少行星？（1分）", "请说出地球的直径（1分）", "日食食分 零点七七 表示什么？（3分）", "木星有多少颗卫星？（2分）", "银河系的直径是多少？（2分）", "天狼星的表面温度是多少？（1分）", "地球距离太阳多远？（单位：亿km）（1分）", "请你解释日食的发生原理（2分）", "请你说出小行星带在哪两颗行星之间（1分）", "从地球发射一枚火箭飞到火星一般要几个月（2分）", "请问日食食分是什么意思？（1分）", "日环食的食分通常大于？（2分）", "太阳的表面温度是？（1分）", "人类第一次载人登月的时间是？（2分）", "一般的三体问题有解吗？如果有，请给出证明过程（3分）", "大部分黄矮星会坍缩为白矮星而不是中子星，请说出原因（4分）", "如果发现强烈的电磁脉冲和X射线却观测不到任何东西，是什么现象（5分）", "有质量的物体可超越光速吗（2分）", "速度越快其内部时间流逝速度会有什么变化（4分）", "光在观测状态下是什么状态（5分）", "黑洞会消亡吗，为什么（4分）", "红巨星聚变到什么元素便会坍缩为白矮星（3分）", "质量越大的恒星会比小质量的恒星寿命更长还是短，为什么（2分）", "恒星第一层聚变是由什么聚变成什么（3分）", "人类发射过最大推力的运载火箭是什么（2分）", "中子星为什么体积较小而质量巨大（3分）", "黑洞周围的空间会扭曲，扭曲的空间叫什么（4分）", "请问负五等星、一等星、六等星哪个最亮？哪个最暗？哪个处于中间位置？（2分）", "冥王星为什么被踢出行星行列？（2分）", "地球和月球的形成时间相近吗，若相近，差多少时间？（2分）", "附加：天宫空间站从进入中国上空到离开中国上空大概需要多少时间？（请写过程）（七分）", "恒星的卫星也称为？（1分）", "太阳光从发射到地球需要多少时间？写出计算过程（4分）", "你认为星球阁的优点和缺点有哪些？（每个提出三点或以上）（3分）", "一颗离恒星比较近的行星的太阳日为无限，请问这颗行星处于什么状态？（4分）", "请解释3.96AU的含义（1分）", "请将蓝色恒星、红色恒星、黄色恒星、白色恒星的温度进行排序（2分）", "体积无限小，质量无限大的东西存在吗，如果有，是什么？（3分）", "在海边观看船向自己驶来，总是会先看到船最高的地方出现，而不是直接看到整艘船，这说明了什么？（3分）", "地球相似度高说明？（3分）", "地月系的质心是否在地球以内，如果是，请解释原因，如果不是，请直接说出质心距离地球表面有多远.（3分）", "地球的自转倾角和极圈纬度有什么关系？（3分）", "地球的哪里到哪里为东半球？（1分）", "如果你的速度是1光秒每秒，那么这时人们会说你的速度就是？（3分）", "太阳在恒星光谱属于什么型恒星？（2分）", "地球海洋面积占总面积的百分之几？（精确到个位）（1分）", "月球每年远离我们多少？（1分）", "为什么我们在地球上只能看到月球上的一个面？（1分）", "“月有阴晴圆缺”，为什么月有“圆缺”？（3分）", "火星冲日时，火星的亮度相对于其他时间通常要高还是低又或者是不变？（3分）", "太阳到比邻星有多远？（1分）", "请解释为什么比地球离太阳近的行星只有凌日而没有冲日（可画图）（5分）", "请解释为什么比地球离太阳远的行星只有冲日而没有凌日（可画图）（4分）", "在火星和木星之间有一条包含了很多小行星的地方，请问这个地方叫什么？（1分）", "为什么火星的两颗卫星不呈球形？（2分）", "水星是太阳系最热的行星吗？请说明理由（3分）", "比邻星属于什么（填数字）星系统？（2分）"],
+                ];
+                document.getElementById("result").innerHTML = "生成中...";
+                theScoreRateOfTheFirstReview = 0.8; //第一次考试通过分率
+                if (numberOfTests == "" || numberOfTests != Math.floor(numberOfTests) || numberOfTests <= 0) {
+                    document.getElementById("result").innerHTML = "生成失败，错误原因:考试次数填写错误";
+                    return 0;
+                }
+                if (numberOfTests == 1) {
+                    minimumNumberOfQuestions = 4; //最小生成题目数量
+                } else {
+                    minimumNumberOfQuestions = 5;
+                }
+                for (let i = 0; i < 2; i++) {
+                    questionBank = tk[i];
+                    totalScore = i != 0 ? 0 : 3; //总分
+                    numberOfQuestions = Math.floor(Math.random() * (8 - minimumNumberOfQuestions)) + minimumNumberOfQuestions; //生成多少题
+                    topic = "";
+                    questionNumber = 0; //题号
+                    while (questionNumber < numberOfQuestions) {
+                        currentTopic = questionBank[Math.floor(Math.random() * questionBank.length)];
+                        if (!eval("/" + currentTopic + "/").test(topic)) {
+                            console.log("题目添加");
+                            questionNumber++;
+                            topic = topic + "<br>" + questionNumber + "." + currentTopic; //题目
+                            totalScore += Number(String(currentTopic.match(/（\d分）/)).match(/\d/));
+                        } else {
+                            console.log("题目重复");
+                        }
+                    }
+                    if (numberOfTests == 1) {
+                        qualifiedScore = totalScore * theScoreRateOfTheFirstReview; //通过分(第一次)
+                    } else {
+                        qualifiedScore = totalScore * ((1 / 600) * numberOfTests ** 3 - (1 / 50) * numberOfTests ** 2 + (71 / 600) * numberOfTests + 13 / 20 + 0.02);
+                        if (qualifiedScore >= totalScore) {
+                            qualifiedScore = totalScore;
+                        }
+                    }
+                    console.log("通过分计算,通过分率:" + qualifiedScore / totalScore);
+                    if (i == 0) {
+                        yzmLibrary = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+                        yzm = "";
+                        for (let index = 1; index <= 5; index++) {
+                            yzm += yzmLibrary[Math.floor(Math.random() * yzmLibrary.length)];
+                        }
+                        console.log("验证码生成");
+                    }
+                    qualifiedScore = Math.round(qualifiedScore * 10) / 10;
+                    switch (i) {
+                        case 0:
+                            document.getElementById("result").innerHTML = "加入星球阁申请试卷<br>第" + document.getElementById("numberOfTests").value + "次考试<br>备注：总分不包含附加题<br>注意：<br>1.请不要通过网上查找！<br>2.不会的可以问，最多问两题（但是最多只能得到这道题80%的分数）<br>3.所有卷的得分均超过通过分才可入阁<br>第一卷：<br>总分" + totalScore + "分，通过分" + qualifiedScore + "分<br>0.首先送给你一点分，只要输入正确以下字符：" + yzm + "（3分）" + topic + "<br>";
+                            break;
+                        default:
+                            document.getElementById("result").innerHTML += "第二卷：<br>总分" + totalScore + "分，通过分" + qualifiedScore + "分" + topic + "<br>" + "第三卷：<br>满分35分，通过分22分<br>1.画一张星球图（15分）<br>2.发布一个关于星球的作品（20分）";
+                            break;
+                    }
+                }
+                return qualifiedScore / totalScore;
+            }
+        </script>
+    </head>
+    <body onload="document.getElementById('main').style.display='block'">
+        <noscript>你必须允许运行Javascript才能使用生成器！！！</noscript>
+        <div id="main" style="display: none">
+            <div class="title">
+                <h1>星球阁试卷生成器</h1>
+                <a class="version" href="javascript:alert('更新内容:修复了一个bug')">2.0.1</a>
+                <a style="font-size: 0.5em">by:nsakrty</a>
+            </div>
+            <p class="warning">请注意:未经允许，不要分享本网站链接！！！</p>
+            <p>审核进行时!</p>
+            <a>考试次数:</a>
+            <input id="numberOfTests" value="1" />
+            <button onclick="generate(document.getElementById('numberOfTests').value)">生成</button>
+            <p>结果如下:</p>
+            <p id="result"></p>
+        </div>
+        <div style="height: 60em"></div>
+        <a class="lzs">冷知识:版本号可以点</a>
+    </body>
+</html>

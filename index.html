@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>欢迎来到SRPN网!</title>
+        <!-- meta区 -->
+        <meta name="keywords" content="星球阁官方网站, SRPN网, SRPN, 星球阁, star pavilion, 天文, 绘画, 组织" />
+        <meta name="description" content="您可以从这里了解到SRPN的相关知识" />
+        <meta name="author" content="nsakrty" />
+        <!-- meta区 -->
+        <link rel="Shortcut Icon" href="https://user-assets.sxlcdn.com/images/703562/Fu2HV9A-vqwVbKoCjNPG1CmqWe9j.jpg?imageMogr2/strip/auto-orient/thumbnail/64x64>/interlace/1/format/jpg" />
+        <meta charset="utf-8" />
+        <style>
+            body {
+                background-color: #ccf;
+                color: #464849;
+                font-family: sans-serif, arial;
+            }
+            .link {
+                background-color: #9cf;
+                border: 8px solid #000;
+                height: 184px;
+                width: 339.55px;
+            }
+            .link a {
+                line-height: 184px;
+                width: 339.55px;
+                text-align: center;
+                margin: 0 auto;
+                display: block;
+                color: #435047;
+                text-decoration: none;
+                font-family: arial;
+            }
+            :lang(zh) .link a {
+                font-size: 4em;
+            }
+            @media (max-width: 400px) {
+                body {
+                    font-size: 0.7em;
+                }
+                .link a {
+                    line-height: 128.8px;
+                    width: 237.865px;
+                }
+                .link {
+                    border: 5.6px solid #000;
+                    height: 128.8px;
+                    width: 237.865px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1 id="h" onclick="fun()" style="display: inline">欢迎来到SRPN网!</h1>
+            <p>这是<a href="https://nsakrty.rth.app">nsakrty</a>为星球阁制作的静态网站</p>
+            <p>上次更新于2022.11.12 14:28</p>
+            <p style="color: green">
+                <small>
+                    最新消息:<br />
+                    <ol style="color: green">
+                        <li>2022/11/12,星球阁阁主由原来的蜻延与Nsakrty(双阁主)转变为Nsakrty，副阁主为青菜是只屑恒星(试用期:221112-221212)与蜻延（固定副阁主）</li>
+                        <li>新一轮审核开始了!</li>
+                    </ol>
+                </small>
+            </p>
+            <noscript>自2022.04.25起,本网站开始运用javascript!启用javascript,带来更好的体验!</noscript>
+        </div>
+        <div class="link_all">
+            <h1>选择访问一个网站</h1>
+            <div class="link_of_SRPN">
+                <div class="link"><a href="srpn/">点我进入</a></div>
+                <p>↑星球阁简介网↑</p>
+                <div class="link"><a href="srpn/TL.html">点我进入</a></div>
+                <p>↑星球阁条例网↑</p>
+                <div class="link"><a href="srpn/history.html">点我进入</a></div>
+                <p>↑星球阁简史网↑</p>
+                <p><a href="https://xingqiuge.mysxl.cn">→星球阁老网站←</a></p>
+                <p><a href="enemy/">→敌对组织/人物←</a></p>
+                <p><a href="affiliateed/">→附属组织←</a></p>
+                <p><a href="srpn/MrDt.html">→成员检测器←</a></p>
+                <p><a href="https://hanabi.data-viz.cn/chart.html?id=chartId_a9f8b27562824c07bd4f3e7dec989f32&isIframe=1">→SRPN成员大合照←</a></p>
+                <p><a href="test.html">→测试网站←</a></p>
+            </div>
+            <div class="External_links">
+                <h2>友情链接</h2>
+                <p><a href="https://e2.rth.app">→Earth-2的网站←</a></p>
+                <p><a href="https://huixing.rth.app/">→新智慧星的网站←</a></p>
+                <p><a href="https://Maugfy.rth.app">→Maugfy的网站←</a></p>
+                <p><a href="https://yikeshuiyi.mysxl.cn">→水益的网站←</a></p>
+                <p><a href="https://bbstar-xin.rth.app">→ineter-b的网站←</a></p>
+            </div>
+        </div>
+        <script>
+            var k = 1;
+            function fun() {
+                var wt = document.getElementById("h");
+                switch (k) {
+                    case 1:
+                        wt.innerHTML = "点我干嘛！！";
+                        break;
+                    case 2:
+                        wt.innerHTML = "你再点一次！！";
+                        break;
+                    case 4:
+                        lk = document.querySelectorAll(".link a ");
+                        [lk[0].innerHTML, lk[1].innerHTML, lk[2].innerHTML] = ["点我退出", "点我干啥", "不要点我"];
+                        allLinks = document.querySelectorAll(".link_all p>a[href]");
+                        for (let i = 0; i < allLinks.length; i++) {
+                            allLinks[i].innerHTML = "→猜猜这是啥？←";
+                        }
+                    case 3:
+                        wt.innerHTML = "我生气啦！！";
+                        alert("你都点了" + k + "次了！");
+                        break;
+                    default:
+                        alert("哼！");
+                        break;
+                }
+                k = k + 1;
+            }
+        </script>
+    </body>
+</html>

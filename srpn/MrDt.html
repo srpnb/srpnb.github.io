@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="Shortcut Icon" href="https://user-assets.sxlcdn.com/images/703562/Fu2HV9A-vqwVbKoCjNPG1CmqWe9j.jpg?imageMogr2/strip/auto-orient/thumbnail/64x64>/interlace/1/format/jpg" />
+        <title>srpn成员检测器</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="是不是，一查便知" />
+        <style>
+            body {
+                background-color: #ccccff;
+                text-align: center;
+                font-family: sans-serif, arial;
+                color: #464849;
+            }
+            p {
+                margin: 8px;
+            }
+            button {
+                margin: 8px;
+            }
+        </style>
+        <script>
+            /* 查询次数 */ var pattern;
+            function ts(str) {
+                pattern = /^(303notfont|SakuraZu750143|qing_yan_QY|yuanshenSRPNB|Earth2|atpxsrpn|eta_uma_54188|Jecair009877|NH3B114514SRPN|qF\.134|hv2112xingqiuge|M\.atpx\.and\.srpn|yinxing\.SRPN|Xingxinggeyyds|xezen52t6lx71|tau_sgr30|xinglinEXO|glz518g|tsy_SRPN|Beta\.Libra\.A|cnsasb_5418|Saturn1SRPN|SRPN1145141991|BetaLibraZub|E2srwater|MICEJ|NAIDOUG|wka1469dmx4689k4|R136a1zb|Maugfy|TB_SR|betelguse|LiuChenyi_MC|114514for1919810|Beltelgeuse_Saly|NaOH_Acubens\.A|AXTLK0321|Antares_B_Zhixi|yikeshuiyi\.SRPN|xinxiuer_a_srpg|Regulus_er2074\.|dyzrn9qrt60o|A_bei_pollux_08\.|Tiantijun158xpg|SRPNkp10114514|dy\.LiJiu_SRPN|rgfzhc\.dqzhjsy|42134608484|41362845261|spr2878981277|SiriusBCap72|dyykqb3hm5o0|Judyshso|vvCepheia|SRPN_XQG|TWDFSY28|95726817650|blackhole_66666|bestshigediaosi|983479295|mljx_zsqjx|Sirius_Atianlang|CESA080929|Nesge\.PWO|dianzanguanzhu11|1828693190|bei\.he\.er\.Aa|1145141919810v\.|dy23liln3x37|1911dwh|weilaichupin|tsy6666666yyds|1234567890123\.\.1|haioujun|Solar\.Uranus|xiaoQ11451454188|PistolStarSRPN|tianwangxingSRPN|Rigufy_SRPN_Saly|FazhyanklSun12|Micro\.\.\.|Krputor|Saturntuxing|Muqiu\.114514|114514tianezuo|E2syouyixiaohao|earth1srpn|93727503122|chino_cocoa11|51851318070|Phairty114514|Castor_Aa\.SRPN|93126942363|R869776_SRPN|884481752|94794455197|89448632933|68580073674|SRPNBarnad|ScoAab2|MoonandEarth|Laoguo19|srpn\.castor_Ab|GiminiNorth2Aa|267418002|xtlxtlxtlxtlxtl|rui\.sk\.srpn|xqg200631415926|AsmallM\.TM220A|wdsxbfl|Centauri_SR1145|DFRET00DL|Sharkearth4xp|49631503785|38526216702|earth78114514|22538961121|73729691744|SirirusBCap72|67897086846|xwang1919810|47245090905|Spr18693\.astro|95726817560|SiriusA_SRPN|3838438233SB|UranusandNepture|Ancturus|24209773602|dy35o66e7itg99|40199449207|Minecraft_jizhen|tianlangxingC|tuaisha50190|77112116742|76818268549|chuerrrrrrr|520wangzixuan025|shulikoushuiyi|lamyourfather663|19861365|qing35_|sbcsrpn|lanyiwolaopo|MITAN3\.1415926\.\.\.|dyqk7kgxgxu9|pvz5578D|627752698|dyykw675ev5j|SDFSNCOV159357RR|SPR_18693\.ls|Starship13|233\.7089725|kaipulei186f|dy7cd5t7uuw2|venus_srpn|starzero14|nsakrty|huangaixing|SunStarQAQ13|wowuyule5202|4461600_SRPN|SRPNpangzilong74|anszxhx|zb114514|phekshuizhi666|minecraftfkj66|necha_photograph|naozhou|81857630495|27149615686|woshinima_srpn|banguZFCbeiy|S\.R\.P\.N_cross|yinxing\.SRPN|96820281082|Mkey84559|TJ520MC|shenxiouqi|346630027|rui\.sk\.srpn|RSSKC\.V|srpn)$/gi;
+                /* 正则 */ var k = pattern.test(str);
+                document.getElementById("test").style.display = "block";
+                document.getElementById("why").style.display = "none";
+                console.log(k);
+                if (k == 1) {
+                    document.getElementById("b").innerHTML = "是SRPN的";
+                    document.getElementById("whynot").style.display = "none";
+                } else {
+                    document.getElementById("b").innerHTML = "不是SRPN的";
+                    document.getElementById("whynot").style.display = "block";
+                }
+            }
+            function list() {
+                var text = (document.getElementById("d").innerHTML = "This is RegEx of member's list:<br><p style='word-wrap:break-word;'>" + pattern + "</p>"); /*列出成员列表的正则表达式*/
+            }
+        </script>
+    </head>
+    <body>
+        <h1>srpn成员检测</h1>
+        <p>工具开发中...</p>
+        <div id="why" style="color: #3b80ac">
+            <p>为什么要开发成员检测器？</p>
+            <strong><p style="font-size: 0.75em; max-width: 500px; margin: auto">星球阁开始变得知名，但总有人冒充自己加入了SRPN，并且以SRPN的名头惹事，导致我们背上莫须有的罪名，开发此工具就是为了防止这件事的发生</p></strong>
+        </div>
+        <p>使用前请记住：输入成员<a style="color: red">抖音号</a>！！！（最好复制）</p>
+        <p>目前此检测器已经很可靠了（几乎所有成员的抖音号我都收录了进去），所以<a style="color: red">不用担心误判了！！！</a></p>
+        <p>结果<a style="color: red">仅供参考！！！</a>如果实在不确定，可以来问<a href="https://v.douyin.com/FtTMvDN/">Nsakrty</a></p>
+        <p>上次更新于20221106</p>
+        <noscript>js未开启，需要js启用才能使用！<br /></noscript><input id="a" oninput="ts(document.getElementById('a').value)" onchange="ts(document.getElementById('a').value)" placeholder="输入抖音号" /><a id="b">是不是SRPN的？</a>
+        <div id="whynot" style="display: none">
+            <p>我搜的人是SRPN成员却显示未加入,<a href="https://v.douyin.com/FtTMvDN/">我要上报</a>!</p>
+            <p style="color: rgb(20, 73, 154)">显示未加入的原因：<br />1.非星球阁成员<br />2.此成员还未收录<br />3.成员改抖音号，网站未作更改<br />4.你查的是名字或者打错了<br />5.我录入抖音号的时候打错了</p>
+        </div>
+        <p><a href="https://srpn.rth.app">回到主页</a></p>
+        <div id="test" style="display: none">
+            <button onclick="list()">Look at RegEx of member's list</button>
+            <p id="d"></p>
+        </div>
+        <h3 style="text-align: right; margin-right: 30px">--nsakrty制作</h3>
+    </body>
+</html>
